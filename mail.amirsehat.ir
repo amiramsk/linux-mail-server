@@ -2,8 +2,6 @@
         listen 80;
         server_name mail.amirsehat.ir;
 
-        # این مسیر رو با توجه به خروجی dpkg -L roundcube-core چک کن
-        # به احتمال زیاد باید /var/lib/roundcube/public_html باشه
         root /var/lib/roundcube/public_html;
         index index.php index.html index.htm;
 
@@ -13,18 +11,15 @@
 
         location ~ \.php$ {
             include snippets/fastcgi-php.conf;
-            # مطمئن شو که مسیر fastcgi_pass با مسیر php-fpm شما یکی باشه
             fastcgi_pass unix:/run/php/php8.3-fpm.sock;
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
             include fastcgi_params;
         }
 
-        # برای جلوگیری از نمایش محتوای فایل‌های حساس
         location ~ /\.ht {
             deny all;
         }
 
-        # تنظیمات مربوط به لاگ‌ها
         access_log /var/log/nginx/mail.amirsehat.ir.access.log;
         error_log /var/log/nginx/mail.amirsehat.ir.error.log;
     }
