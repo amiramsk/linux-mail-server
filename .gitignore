@@ -1,0 +1,12 @@
+# Real server configs (contain your actual domain/IP/passwords) — never commit these
+configs/real/
+*.private
+*.pem
+*.key
+debian-db.php
+debian-db-roundcube.php
+config.inc.php
+
+# OS / editor junk
+.DS_Store
+*.swp
