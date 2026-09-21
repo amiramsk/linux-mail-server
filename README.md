@@ -509,6 +509,12 @@ echo "DKIM test from my server" | mail -s "DKIM Test" -r "amir@yourdomain.com" y
 - TLS is enforced on IMAP/POP3 (`ssl = required`) and available on every SMTP
   entry point.
 
+## Authors
+
+- Amir-Sehat — https://github.com/amiramsk
+- Mohsen Dashti — https://github.com/mohsendashti1381
+
+
 ## License
 
 MIT
